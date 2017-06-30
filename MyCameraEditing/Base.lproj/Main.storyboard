@@ -1,26 +1,147 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RTi-qg-tcj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Effect View Controller-->
+        <scene sceneID="ull-Zp-ill">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lte-pJ-KKq" customClass="EffectViewController" customModule="MyCameraEditing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="MCC-TB-3Ib"/>
+                        <viewControllerLayoutGuide type="bottom" id="MID-bG-y3Z"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="fxe-aw-vMZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="17p-Y9-mAV">
+                                <rect key="frame" x="66" y="40" width="243" height="407"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-gz-KOg">
+                                <rect key="frame" x="66" y="477" width="243" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VaM-wb-U02"/>
+                                </constraints>
+                                <state key="normal" title="エフェクト">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="effectButtonAction:" destination="lte-pJ-KKq" eventType="touchUpInside" id="dwF-XM-7QZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePg-ve-S0M">
+                                <rect key="frame" x="66" y="537" width="243" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="38F-Xm-RtR"/>
+                                </constraints>
+                                <state key="normal" title="シェア">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonAction:" destination="lte-pJ-KKq" eventType="touchUpInside" id="4LO-eS-v8P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hF4-FG-dwY">
+                                <rect key="frame" x="66" y="597" width="243" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bf3-9z-thO"/>
+                                </constraints>
+                                <state key="normal" title="閉じる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="lte-pJ-KKq" eventType="touchUpInside" id="nRi-gg-HKR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="hF4-FG-dwY" secondAttribute="trailing" constant="50" id="8Lu-4V-Qlk"/>
+                            <constraint firstItem="ePg-ve-S0M" firstAttribute="top" secondItem="d9T-gz-KOg" secondAttribute="bottom" constant="20" id="Aob-tA-Cu9"/>
+                            <constraint firstItem="d9T-gz-KOg" firstAttribute="leading" secondItem="fxe-aw-vMZ" secondAttribute="leadingMargin" constant="50" id="HYV-zh-rPD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ePg-ve-S0M" secondAttribute="trailing" constant="50" id="INw-5y-kBC"/>
+                            <constraint firstItem="MID-bG-y3Z" firstAttribute="top" secondItem="hF4-FG-dwY" secondAttribute="bottom" constant="30" id="NYf-GY-DZH"/>
+                            <constraint firstItem="d9T-gz-KOg" firstAttribute="top" secondItem="17p-Y9-mAV" secondAttribute="bottom" constant="30" id="NeJ-ln-22c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="17p-Y9-mAV" secondAttribute="trailing" constant="50" id="a5o-Nj-S82"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d9T-gz-KOg" secondAttribute="trailing" constant="50" id="epk-Rp-rBx"/>
+                            <constraint firstItem="hF4-FG-dwY" firstAttribute="leading" secondItem="fxe-aw-vMZ" secondAttribute="leadingMargin" constant="50" id="kXZ-gJ-Lr4"/>
+                            <constraint firstItem="17p-Y9-mAV" firstAttribute="top" secondItem="MCC-TB-3Ib" secondAttribute="bottom" constant="20" id="kuv-72-1Kc"/>
+                            <constraint firstItem="17p-Y9-mAV" firstAttribute="leading" secondItem="fxe-aw-vMZ" secondAttribute="leadingMargin" constant="50" id="lac-e2-y5w"/>
+                            <constraint firstItem="ePg-ve-S0M" firstAttribute="leading" secondItem="fxe-aw-vMZ" secondAttribute="leadingMargin" constant="50" id="rbz-Dv-6C7"/>
+                            <constraint firstItem="hF4-FG-dwY" firstAttribute="top" secondItem="ePg-ve-S0M" secondAttribute="bottom" constant="20" id="xd3-ZQ-SaU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="hF4-FG-dwY" id="m87-1H-Azh"/>
+                        <outlet property="effectButton" destination="d9T-gz-KOg" id="B5M-0J-mlz"/>
+                        <outlet property="effectImage" destination="17p-Y9-mAV" id="htX-PO-fA5"/>
+                        <outlet property="shareButton" destination="ePg-ve-S0M" id="DgC-3J-9ev"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g19-Nm-rWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="895" y="139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uO0-2M-Qi8">
+            <objects>
+                <viewController id="RTi-qg-tcj" customClass="ViewController" customModule="MyCameraEditing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OsL-h4-fUO"/>
+                        <viewControllerLayoutGuide type="bottom" id="o2b-1N-Bwv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AU4-5a-PTd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVw-6O-yJ8">
+                                <rect key="frame" x="66" y="50" width="243" height="467"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2z-cC-WGU">
+                                <rect key="frame" x="66" y="567" width="243" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CIX-Ys-hL7"/>
+                                </constraints>
+                                <state key="normal" title="カメラを起動する">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraButtonAction:" destination="RTi-qg-tcj" eventType="touchUpInside" id="dF2-4Q-ySc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="o2b-1N-Bwv" firstAttribute="top" secondItem="q2z-cC-WGU" secondAttribute="bottom" constant="50" id="9ZE-vX-JGW"/>
+                            <constraint firstItem="q2z-cC-WGU" firstAttribute="top" secondItem="gVw-6O-yJ8" secondAttribute="bottom" constant="50" id="Juy-33-eVh"/>
+                            <constraint firstItem="q2z-cC-WGU" firstAttribute="leading" secondItem="AU4-5a-PTd" secondAttribute="leadingMargin" constant="50" id="Nji-Fy-ZxO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q2z-cC-WGU" secondAttribute="trailing" constant="50" id="Shc-w2-Kx1"/>
+                            <constraint firstItem="gVw-6O-yJ8" firstAttribute="top" secondItem="OsL-h4-fUO" secondAttribute="bottom" constant="30" id="cXT-0A-zIB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gVw-6O-yJ8" secondAttribute="trailing" constant="50" id="fVc-nv-aks"/>
+                            <constraint firstItem="gVw-6O-yJ8" firstAttribute="leading" secondItem="AU4-5a-PTd" secondAttribute="leadingMargin" constant="50" id="hMG-ui-NmC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="q2z-cC-WGU" id="K5o-nK-C6u"/>
+                        <outlet property="pictureImage" destination="gVw-6O-yJ8" id="EUl-e2-9wW"/>
+                        <segue destination="lte-pJ-KKq" kind="show" identifier="showEffectView" id="Ucv-Eu-Ceo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3Z-L6-7zE" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-90.400000000000006" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
